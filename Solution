@@ -1,0 +1,22 @@
+public class Solution {
+    public bool IsPalindrome(string s) {
+        int i = 0; string phrase = "";
+        while (i<s.Length){
+            if(Char.IsDigit(s[i])){
+                phrase += s[i];
+            }
+            else if(Char.IsLetter(s[i])){
+                phrase += Char.ToLower(s[i]);
+            }
+            i++;
+        }
+        int n = phrase.Length-1; i=0;
+        while(i<n){
+            if (phrase[i]!=phrase[n]){
+                return false;
+            }
+            i++; n--;
+        }
+        return true;
+    }
+}
